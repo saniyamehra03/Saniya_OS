@@ -1,10 +1,10 @@
 import React from 'react'
-
+import "./App.css";
 const App = () => {
   return (
     <>
     
-    <div>Saniya Os</div>
+    <div className="bg-black text-white h-screen">Saniya Os</div>
       <br/>
       <div>About Me</div>
       <div>Projects</div>
