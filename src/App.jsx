@@ -1,6 +1,15 @@
 import React from 'react'
 import "./App.css";
+import Icon from "./components/Icon";
 const App = () => {
+     const Icons=[
+     { emoji: "👩", name: "About Me" },
+      {emoji:"💻" , name: "Projects" },
+      { emoji:"📊", name: "Placement Tracker" },
+      { emoji:"📝", name:"Notes"},
+      { emoji:"⏰", name:"Reminder" },
+      {emoji:"🎵" ,name:"Music Player" },
+        ];
   return (
     <>
    
@@ -8,14 +17,18 @@ const App = () => {
 bg-slate-800 font-semibold  pt-4 pb-4 pl-4 pr-4 text-lg">
       <div>Saniya Os</div>
       <br/>
+  
       <div className="flex-1">
-      <div>About Me</div>
-      <div>Projects</div>
-      <div>Placement Tracker</div>
-      <div>Notes</div>
-      <div>Reminder</div>
-      <div>Music Player</div>
-      </div>
+  {
+    Icons.map((item) => (
+      <Icon
+      key={item.name}
+      emoji={item.emoji}
+      name={item.name}
+      />
+    ))
+  }
+</div>
      <div>Taskbar</div>
      </div>
     </>
