@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Icon = ({emoji,name}) => {
+const Icon = ({emoji,name,onClick}) => {
   return (
-    <div>
+    <div onClick={onClick}>
       {emoji}{name}
     </div>
   )
