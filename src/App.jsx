@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import Icon from "./components/Icon";
+import Window from "./components/Window";
 
 const App = () => {
   const Icons = [
@@ -32,75 +33,50 @@ const App = () => {
       </div>
 
       {openApp === "About Me" && (
-        <div className="absolute top-20 left-40 bg-white text-black p-4 rounded-lg w-96 shadow-xl">
-          <div className="flex justify-between items-center mb-3">
-            <h2 className="font-bold text-lg">About Me</h2>
-            <button onClick={() => setOpenApp(null)}>❌</button>
-          </div>
-
+           <Window  title = "About Me"
+             onClose={() => setOpenApp(null)}>
           <p>Hello, I'm Saniya.</p>
           <p>Frontend Developer & AI Enthusiast.</p>
-        </div>
+          </Window>
       )}
 
       {openApp === "Projects" && (
-        <div className="absolute top-20 left-40 bg-white text-black p-4 rounded-lg w-96 shadow-xl">
-          <div className="flex justify-between items-center mb-3">
-            <h2 className="font-bold text-lg">Projects</h2>
-            <button onClick={() => setOpenApp(null)}>❌</button>
-          </div>
-
-          <p>My projects will be shown here.</p>
-        </div>
+            <Window title= "Projects"
+            onClose={() => setOpenApp(null)}>
+        <p>My projects will be shown here.</p>
+            </Window>
       )}
 
-      {/* Placement Tracker */}
       {openApp === "Placement Tracker" && (
-        <div className="absolute top-20 left-40 bg-white text-black p-4 rounded-lg w-96 shadow-xl">
-          <div className="flex justify-between items-center mb-3">
-            <h2 className="font-bold text-lg">Placement Tracker</h2>
-            <button onClick={() => setOpenApp(null)}>❌</button>
-          </div>
-
-          <p>Placement tracking coming soon.</p>
-        </div>
+            <Window title ="Placement Tracker" 
+           onClose={() => setOpenApp(null)}>
+             <p>Placement tracking coming soon.</p>
+           </Window>
       )}
 
       {openApp === "Notes" && (
-        <div className="absolute top-20 left-40 bg-white text-black p-4 rounded-lg w-96 shadow-xl">
-          <div className="flex justify-between items-center mb-3">
-            <h2 className="font-bold text-lg">Notes</h2>
-            <button onClick={() => setOpenApp(null)}>❌</button>
-          </div>
-
-          <textarea
+            <Window title=" Notes"
+           onClose={() => setOpenApp(null)}>
+             <textarea
             className="border w-full p-2 rounded"
             rows="6"
             placeholder="Write your notes..."
           />
-        </div>
+           </Window>
       )}
 
       {openApp === "Reminder" && (
-        <div className="absolute top-20 left-40 bg-white text-black p-4 rounded-lg w-96 shadow-xl">
-          <div className="flex justify-between items-center mb-3">
-            <h2 className="font-bold text-lg">Reminder</h2>
-            <button onClick={() => setOpenApp(null)}>❌</button>
-          </div>
-
-          <p>Reminder app coming soon.</p>
-        </div>
+            <Window title ="Reminder"
+            onClose={() => setOpenApp(null)}>
+                <p>Reminder app coming soon.</p>
+            </Window>
       )}
 
       {openApp === "Music Player" && (
-        <div className="absolute top-20 left-40 bg-white text-black p-4 rounded-lg w-96 shadow-xl">
-          <div className="flex justify-between items-center mb-3">
-            <h2 className="font-bold text-lg">Music Player</h2>
-            <button onClick={() => setOpenApp(null)}>❌</button>
-          </div>
-
-          <p>🎵 Music app coming soon...</p>
-        </div>
+            <Window title ="Music Player"
+             onClose={() => setOpenApp(null)}>
+            <p>🎵 Music app coming soon...</p>
+             </Window>
       )}
       <div className="absolute bottom-0 left-0 right-0 h-14 bg-black/40 backdrop-blur-md flex items-center justify-between px-4">
         <div>🚀 Start</div>
