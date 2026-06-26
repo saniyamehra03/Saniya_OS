@@ -5,12 +5,12 @@ import Window from "./components/Window";
 import Taskbar from "./components/Taskbar";
 const App = () => {
   const Icons = [
-    { emoji: "👩", name: "About Me" },
-    { emoji: "💻", name: "Projects" },
-    { emoji: "📊", name: "Placement Tracker" },
-    { emoji: "📝", name: "Notes" },
-    { emoji: "⏰", name: "Reminder" },
-    { emoji: "🎵", name: "Music Player" },
+    {   id: 1,emoji: "👩", name: "About Me" },
+    {   id: 2, emoji: "💻", name: "Projects" },
+    {   id: 3 ,emoji: "📊", name: "Placement Tracker" },
+    {  id: 4,emoji: "📝", name: "Notes" },
+    {  id: 5 ,emoji: "⏰", name: "Reminder" },
+    {  id: 6 ,emoji: "🎵", name: "Music Player" },
   ];
 
 const [openApp, setOpenApp] = useState(null);
@@ -19,10 +19,11 @@ const appContent={
   "Projects": <p>My projects will be shown here.</p>,
   "Notes": <textarea />,
   "Reminder":<p>Reminder app coming soon.</p>,
-  "Music Player":<p>🎵 Music app coming soon...</p>
+  "Music Player":<p>🎵 Music app coming soon...</p>,
+  "Placement Tracker": <p>Placement tracking coming soon.</p>
 }
   return (
-   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-black p-4 rounded-lg w-96 shadow-xl z-10">
+   <div className="h-screen flex flex-col text-white bg-gradient-to-br from-indigo-900 via-purple-900 to-slate-900 p-4 relative">
       <div className="text-2xl font-bold mb-4">
         Saniya OS
       </div>
@@ -46,14 +47,6 @@ const appContent={
         </Window>
       )
      }
-
-      <div className="absolute bottom-0 left-0 right-0 h-14 bg-black/40 backdrop-blur-md flex items-center justify-between px-4">
-        <div>🚀 Start</div>
-      <Taskbar openApp={openApp}/>
-        <div>
-          {new Date().toLocaleTimeString()}
-        </div>
-      </div>
     </div>
   );
 };
