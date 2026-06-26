@@ -13,7 +13,7 @@ const App = () => {
     { emoji: "🎵", name: "Music Player" },
   ];
 
-  const [openApp, setOpenApp] = useState(null);
+const [openApp, setOpenApp] = useState(null);
 const appContent={
   "About Me" : <p>Hello, I'm Saniya</p>,
   "Projects": <p>My projects will be shown here.</p>,
