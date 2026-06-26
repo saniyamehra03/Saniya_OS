@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import Icon from "./components/Icon";
 import Window from "./components/Window";
-
+import Taskbar from "./components/Taskbar";
 const App = () => {
   const Icons = [
     { emoji: "👩", name: "About Me" },
@@ -22,7 +22,7 @@ const appContent={
   "Music Player":<p>🎵 Music app coming soon...</p>
 }
   return (
-    <div className="h-screen flex flex-col text-white bg-gradient-to-br from-indigo-900 via-purple-900 to-slate-900 p-4 relative">
+   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-black p-4 rounded-lg w-96 shadow-xl z-10">
       <div className="text-2xl font-bold mb-4">
         Saniya OS
       </div>
@@ -49,11 +49,7 @@ const appContent={
 
       <div className="absolute bottom-0 left-0 right-0 h-14 bg-black/40 backdrop-blur-md flex items-center justify-between px-4">
         <div>🚀 Start</div>
-
-        <div>
-          {openApp || "No App Open"}
-        </div>
-
+      <Taskbar openApp={openApp}/>
         <div>
           {new Date().toLocaleTimeString()}
         </div>
