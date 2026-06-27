@@ -31,9 +31,11 @@ const appContent={
       <div className="flex-1 grid grid-cols-2">
         {Icons.map((item) => (
           <Icon
+            key={item.id}
             emoji={item.emoji}
             name={item.name}
             onClick={() => setOpenApp(item.name)}
+            isActive={openApp === item.name}
           />
         ))}
       </div>
