@@ -28,10 +28,9 @@ const appContent={
         Saniya OS
       </div>
 
-      <div className="flex-1">
+      <div className="flex-1 grid grid-cols-2">
         {Icons.map((item) => (
           <Icon
-            key={item.name}
             emoji={item.emoji}
             name={item.name}
             onClick={() => setOpenApp(item.name)}
